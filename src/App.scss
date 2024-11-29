@@ -1,0 +1,173 @@
+.container {
+	max-width: 80%;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.header {
+	padding: 5px 5px;
+	background-color: rgb(28, 24, 20);
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo {
+		width: 10%;
+		display: block;
+		height: auto;
+	}
+
+	&__menu {
+		display: flex;
+		align-items: center;
+		margin-right: 10%;
+	}
+}
+
+.nav__link {
+	margin-left: 35px;
+	color: #fff;
+	font-weight: 500;
+	font-size: 22px;
+}
+
+.open {
+	display: flex !important;
+}
+
+.burger {
+	display: none;
+	// для того, чтобы элементы до и после ориентировались
+	position: relative;
+	z-index: 50;
+	align-items: center;
+	justify-content: flex-end;
+	width: 30px;
+	height: 18px;
+	cursor: pointer;
+
+	span {
+		transform: scale(1);
+		width: 80%;
+		height: 2px;
+		background-color: #fff;
+	}
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background-color: #fff;
+		transition: all 0.3s ease 0s;
+	}
+
+	&::before {
+		top: 0;
+	}
+
+	&::after {
+		bottom: 0;
+	}
+}
+
+@media (max-width: 900px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    overflow-y: auto;
+    padding: 50px 40px;
+    background-color: black;
+    animation: burgerAnimation 0.4s;
+
+    ul {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+  }
+
+  @keyframes burgerAnimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+
+.intro {
+	width: 100%;
+	height: 100vh;
+	background-image: url('./assets/backgroundCoffee.png');
+	background-repeat: no-repeat;
+	background-size: cover; /* Покрыть весь элемент (сохраняя пропорции) */
+	background-position: center;
+
+	&__container {
+		display: flex;
+		margin-top: 100px;
+		max-width: 65%;
+		margin: 0 auto;
+		padding: 0 15px;
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		justify-content: center;
+	}
+
+	&__title {
+		margin-top: 10px;
+		margin-left: 7%;
+		display: flex;
+
+		&-text {
+			font-family: 'Righteous', sans-serif;
+			color: #fff;
+		}
+	}
+
+	&__subtitle {
+		color: #fff;
+		font-family: 'Montserrat', sans-serif;
+		max-width: 60%;
+		line-height: 27px;
+		text-align: center;
+	}
+
+	&__btn {
+		border: none;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+		border-radius: 12px;
+		transition: background-color 0.3s ease;
+		margin: 20px 0 20px 21%;
+		background-color: rgb(157, 119, 83);
+		color: #fff;
+	}
+}
